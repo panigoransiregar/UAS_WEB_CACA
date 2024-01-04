@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2255201016</title>
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="container">
+        <div class="nav-menu">
+            <ul>
+                <li><a href="index.html">Data Kamar</a></li>
+                <li><a href="datatamu.html">Data Tamu</a></li>
+                <li><a href="transaksi.html">Data Inap</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h3>DATA KAMAR</h3>
+            <form class="input">
+                <div class="i">
+                    <label for="kode">KODE KAMAR</label>
+                    <input type="text" id="kode" />
+                </div>
+                <div class="i">
+                    <label for="tipe">TIPE KAMAR</label>
+                    <input type="text" id="tipe" />
+                </div>
+                <div class="i">
+                    <label for="jumlah">JUMLAH KAMAR</label>
+                    <input type="text" id="jumlah" />
+                </div>
+            </form>
+            <div class="proses">
+                <button onclick="proses()">Proses</button>
+            </div>
+            <h3>INFO KAMAR</h3>
+            <div class="tabel">
+                <table>
+                    <tr>
+                        <th>KODE KAMAR</th>
+                        <th>TIPE KAMAR</th>
+                        <th>JUMLAH KAMAR</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function proses() {
+        var kode = document.getElementById("kode").value;
+        var tipe = document.getElementById("tipe").value;
+        var jumlah = document.getElementById("jumlah").value;
+
+        var table = document.querySelector("table");
+        var row = table.insertRow(-1);
+
+        var cellKodeKamar = row.insertCell(0);
+        var cellTipeKamar = row.insertCell(1);
+        var cellJumlahKamar = row.insertCell(2);
+
+        cellKodeKamar.innerHTML = kode;
+        cellTipeKamar.innerHTML = tipe;
+        cellJumlahKamar.innerHTML = jumlah;
+    }
+</script>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #efefef;
+        overflow-x: hidden;
+    }
+
+    .header {
+        margin: 20px;
+    }
+
+    .container {
+        display: flex;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .nav-menu {
+        width: 15%;
+        height: auto;
+        background-color: #efefef;
+        border: 5px solid #d7d7d7;
+        padding: 10px;
+    }
+
+    .nav-menu ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .nav-menu li {
+        padding: 15px;
+        border-bottom: 1px solid #d7d7d7;
+    }
+
+    .content {
+        width: 85%;
+        background-color: rgb(179, 212, 212);
+        padding: 20px;
+    }
+
+    .content h3 {
+        text-align: center;
+    }
+
+    .proses {
+        margin-top: 20px;
+    }
+
+    .proses button {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .input {
+        display: grid;
+        gap: 10px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .input .i {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-bottom: 5px;
+    }
+
+    .tabel {
+        margin-top: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: white;
+    }
+
+    th,
+    td {
+        border: 1px solid;
+        padding: 10px;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    @media screen and (max-width: 768px) {
+        .container {
+            flex-direction: column;
+        }
+
+        .nav-menu {
+            width: 100%;
+            border: none;
+            margin-bottom: 20px;
+        }
+    }
+</style>
+
+</html>
